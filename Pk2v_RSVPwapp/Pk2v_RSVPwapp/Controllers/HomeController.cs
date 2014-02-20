@@ -30,8 +30,21 @@ namespace Pk2v_RSVPwapp.Controllers
         [HttpPost]
         public ViewResult RsvpFrom(GuestResponse guestResponse)
         { 
-        //Todo: Enviar respuesta al correo del organizador
-            return View("Agradecimientos", guestResponse);
+
+
+            //verificando errores de validacion
+            if (ModelState.IsValid)
+            {
+
+                //Todo: Enviar respuesta al correo del organizador
+                return View("Agradecimientos", guestResponse);
+            }
+            else
+            {
+                //hay un prioblema de validacion
+                return View();
+                
+            }
         }
 
     }

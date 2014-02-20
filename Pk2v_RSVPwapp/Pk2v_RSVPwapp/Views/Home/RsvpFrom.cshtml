@@ -9,11 +9,17 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
     <title>RsvpFrom</title>
 </head>
 <body>
+   
     @using (Html.BeginForm())
+    
     { 
+        @*validacion de formulario*@
+        @Html.ValidationSummary()
+
     <p>Tu nombre:@Html.TextBoxFor(x => x.Name)</p>
     <p>Tu correo electronico:@Html.TextBoxFor(x => x.Email)</p>
     <p>Tu telefono:@Html.TextBoxFor(x => x.Phone)</p>
